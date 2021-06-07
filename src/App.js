@@ -1,24 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
+import styled from 'styled-components';
+import { color } from 'styled-system';
+import { ThemeProvider } from 'styled-components';
+import theme from './theme';
+import { flexbox } from 'styled-system';
 
 function App() {
+  const Box = styled.div`
+    display: flex;
+    ${color}
+    ${flexbox}
+  `;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Box
+        color="#fff"
+        bg="neutral.veryDarkViolet"
+        justifyContent="center"
+        flexDirection={['row', 'column']}
+      >
+        <div>Tomato </div>
+        <div>Tomato </div>
+        <div>Tomato </div>
+        <div>Tomato </div>
+        <div>Tomato </div>
+      </Box>
+    </ThemeProvider>
   );
 }
 
