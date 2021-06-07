@@ -5,15 +5,15 @@ import theme from './theme';
 import { Box, Flex, Button } from './components/styledComponents';
 import Navbar from './components/navbar';
 import HeroBlock from './components/heroBlock';
-import bgBoostDesktop from './assests/bg-boost-desktop.svg';
+import CtaBlock from './components/ctaBlock';
 
 function App() {
-  console.log(bgBoostDesktop);
   return (
     <ThemeProvider theme={theme}>
       <Flex flexDirection="column">
         <Navbar />
         <HeroBlock />
+        <CtaBlock />
       </Flex>
     </ThemeProvider>
   );
