@@ -10,7 +10,13 @@ function Navbar() {
   ];
   const cta = ['Login', 'Sign Up'];
   return (
-    <Flex mx="10vw" my="5vh" justifyContent="space-between" alignItems="center">
+    <Flex
+      mx="10vw"
+      my="5vh"
+      justifyContent="space-between"
+      alignItems="center"
+      display={['none', 'flex']}
+    >
       <Flex alignItems="center">
         <img src={`${Logo}`} alt="Shortly logo" />
         {links.map((link, i) => (

@@ -3,7 +3,6 @@ import { Flex, Link, Button, H1 } from './styledComponents';
 import bgBoostDesktop from '../assests/bg-boost-desktop.svg';
 
 function CtaBlock() {
-  console.log(bgBoostDesktop);
   return (
     <Flex
       flexDirection="column"
@@ -16,7 +15,13 @@ function CtaBlock() {
       backgroundRepeat="no-repeat"
       py="4"
     >
-      <H1 fontWeight="700" fontSize="4rem" my="0" color="white" my="4">
+      <H1
+        fontWeight="700"
+        fontSize={['2rem', '4rem']}
+        textAlign="center"
+        my={[4, 0]}
+        color="white"
+      >
         Boost your links today
       </H1>
       <Button
