@@ -1,31 +1,37 @@
 import logo from './logo.svg';
 import './App.css';
-import styled from 'styled-components';
-import { color } from 'styled-system';
 import { ThemeProvider } from 'styled-components';
 import theme from './theme';
-import { flexbox } from 'styled-system';
+import { Box, Flex, Button } from './components/styledComponents';
+import bgBoostDesktop from './assests/bg-boost-desktop.svg';
 
 function App() {
-  const Box = styled.div`
-    display: flex;
-    ${color}
-    ${flexbox}
-  `;
+  console.log(bgBoostDesktop);
   return (
     <ThemeProvider theme={theme}>
-      <Box
+      <Flex
         color="#fff"
         bg="neutral.veryDarkViolet"
         justifyContent="center"
-        flexDirection={['row', 'column']}
+        my="4"
+        backgroundImage={`url(${bgBoostDesktop})`}
+        backgroundSize="cover"
+        backgroundPosition="center"
+        backgroundRepeat="no-repeat"
       >
+        <Button
+          p="4"
+          bg="primary.cyan"
+          borderRadius="21px"
+          color="primary.cyan"
+        >
+          Tomato{' '}
+        </Button>
         <div>Tomato </div>
         <div>Tomato </div>
         <div>Tomato </div>
         <div>Tomato </div>
-        <div>Tomato </div>
-      </Box>
+      </Flex>
     </ThemeProvider>
   );
 }
