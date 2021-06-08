@@ -6,6 +6,7 @@ import { Box, Flex, Button } from './components/styledComponents';
 import Navbar from './components/navbar';
 import HeroBlock from './components/heroBlock';
 import CtaBlock from './components/ctaBlock';
+import Footer from './components/footer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Navbar />
         <HeroBlock />
         <CtaBlock />
+        <Footer />
       </Flex>
     </ThemeProvider>
   );

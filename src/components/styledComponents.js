@@ -42,12 +42,28 @@ const H1 = styled.h1`
 `;
 
 const H2 = styled.h2`
+  font-size: 18px;
   ${color}
   ${background}
   ${typography}
   ${layout}
   ${space}
 `;
+
+const FooterLink = styled.a`
+  font-size: 18px;
+  margin: 5px 0px;
+  text-decoration: none;
+  ${color}
+  ${background}
+  ${typography}
+  ${layout}
+  ${space}
+  &:hover {
+    color: #2acfcf;
+  }
+`;
+
 const Flex = styled.div`
   display: flex;
   ${typography}
@@ -74,4 +90,4 @@ const Button = styled.button`
   }
 `;
 
-export { Box, Flex, Button, Link, H1, H2 };
+export { Box, Flex, Button, Link, H1, H2, FooterLink };
