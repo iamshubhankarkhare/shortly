@@ -26,7 +26,16 @@ const cardData = [
 ];
 const Card = ({ icon, title, body, ...props }) => {
   return (
-    <Flex flexDirection="column" bg="white" p="4" mx="4" {...props}>
+    <Flex
+      flexDirection="column"
+      bg="white"
+      p="4"
+      mx={[0, 4]}
+      my={[4, 0]}
+      justifyContent={['center', 'flex-start']}
+      alignItems={['center', 'flex-start']}
+      {...props}
+    >
       <Flex
         bg="primary.darkViolet"
         justifyContent="center"
@@ -38,10 +47,19 @@ const Card = ({ icon, title, body, ...props }) => {
       >
         <Icon src={`${icon}`} alt="icons" mx="4" />
       </Flex>
-      <H2 my="0" fontSize="2rem" color="neutral.veryDarkBlue">
+      <H2
+        my="0"
+        fontSize="2rem"
+        color="neutral.veryDarkBlue"
+        textAlign={['center', 'left']}
+      >
         {title}
       </H2>
-      <P color="neutral.greyishViolet" fontWeight="400">
+      <P
+        color="neutral.greyishViolet"
+        fontWeight="400"
+        textAlign={['center', 'left']}
+      >
         {body}
       </P>
     </Flex>
@@ -64,17 +82,23 @@ function CardBlock() {
         </H1>
         <H2
           fontWeight="400"
-          width="30vw"
+          width={['50vw', '30vw']}
           fontSize="18px"
           lineHeight="1.25"
           textAlign="center"
           color="neutral.greyishViolet"
+          my={[4, 0]}
         >
           Track how your links are performing accross the web with our advanced
           Statistics dashboard
         </H2>
       </Flex>
-      <Flex justifyContent="center" mx="10vw" py="4">
+      <Flex
+        justifyContent="center"
+        mx="10vw"
+        py="4"
+        flexDirection={['column', 'row']}
+      >
         {cardData.map((el, i) => (
           <Card
             style={{ transform: `translateY(${i * 50}px)` }}

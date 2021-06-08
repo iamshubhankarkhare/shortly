@@ -106,9 +106,9 @@ function Footer() {
           ))}
         </Flex>
       </Flex>
-      <Flex alignItems="flex-start" my="4">
+      <Flex alignItems="flex-start" my="4" justifyContent="space-around">
         {icons.map((el, i) => (
-          <Icon src={`${el}`} alt="icons" mx="4" />
+          <Icon src={`${el}`} alt="icons" />
         ))}
       </Flex>
     </Flex>

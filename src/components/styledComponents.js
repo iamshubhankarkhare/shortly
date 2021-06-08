@@ -71,6 +71,15 @@ const FooterLink = styled.a`
   }
 `;
 
+const Input = styled.input`
+  ${typography}
+  ${layout}
+  ${color}
+  ${flexbox}
+  ${space}
+  ${border}
+`;
+
 const Flex = styled.div`
   display: flex;
   ${typography}
@@ -111,4 +120,4 @@ const Button = styled.button`
   }
 `;
 
-export { Box, Flex, Button, Link, H1, H2, FooterLink, Icon, P };
+export { Box, Flex, Button, Link, H1, H2, FooterLink, Icon, P, Input };

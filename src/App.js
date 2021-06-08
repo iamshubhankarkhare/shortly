@@ -7,6 +7,7 @@ import Navbar from './components/navbar';
 import HeroBlock from './components/heroBlock';
 import CtaBlock from './components/ctaBlock';
 import CardBlock from './components/cardBlock';
+import InputBlock from './components/inputBlock';
 import Footer from './components/footer';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Flex flexDirection="column">
         <Navbar />
         <HeroBlock />
+        <InputBlock />
         <CardBlock />
         <CtaBlock />
         <Footer />
