@@ -4,7 +4,7 @@ import { Flex, Link, Button, H1, Input } from './styledComponents';
 
 function InputBlock() {
   return (
-    <Flex bg="#f6f6f6">
+    <Flex bg="#EFF1F7">
       <Flex
         flexDirection={['column', 'row']}
         justifyContent="space-around"
@@ -17,15 +17,18 @@ function InputBlock() {
         p="5vh"
         width="100%"
         borderRadius="10px"
+        style={{ transform: 'translateY(-50%)' }}
       >
         <Input
           border="none"
           borderRadius="10px"
-          fontSize="2rem"
-          px={[0, '10px']}
-          py="10px"
+          fontSize="24px"
+          px={[0, '20px']}
+          py="15px"
           mx="4"
           width="100%"
+          color="secondary.red"
+          placeholder="Shorten a link here..."
         />
 
         <Button

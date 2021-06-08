@@ -68,7 +68,7 @@ const Card = ({ icon, title, body, ...props }) => {
 
 function CardBlock() {
   return (
-    <Flex flexDirection="column" py="20vh" bg="#f6f6f6">
+    <Flex flexDirection="column" py="20vh" bg="#EFF1F7">
       <Flex flexDirection="column" justifyContent="center" alignItems="center">
         <H1
           fontWeight="700"
@@ -87,7 +87,7 @@ function CardBlock() {
           lineHeight="1.25"
           textAlign="center"
           color="neutral.greyishViolet"
-          my={[4, 0]}
+          my="4"
         >
           Track how your links are performing accross the web with our advanced
           Statistics dashboard

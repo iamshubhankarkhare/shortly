@@ -5,7 +5,8 @@ import Image from '../assests/illustration-working.svg';
 function HeroBlock() {
   return (
     <Flex
-      my="10vh"
+      mt="10vh"
+      mb="20vh"
       ml={[4, '10vw']}
       mr={[4, '0']}
       justifyContent="space-between"
