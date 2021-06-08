@@ -49,7 +49,14 @@ const H2 = styled.h2`
   ${layout}
   ${space}
 `;
-
+const P = styled.p`
+  font-size: 18px;
+  ${color}
+  ${background}
+  ${typography}
+  ${layout}
+  ${space}
+`;
 const FooterLink = styled.a`
   font-size: 18px;
   margin: 5px 0px;
@@ -72,6 +79,7 @@ const Flex = styled.div`
   ${color}
   ${flexbox}
   ${space}
+  ${border}
 `;
 
 const Icon = styled.img`
@@ -103,4 +111,4 @@ const Button = styled.button`
   }
 `;
 
-export { Box, Flex, Button, Link, H1, H2, FooterLink, Icon };
+export { Box, Flex, Button, Link, H1, H2, FooterLink, Icon, P };

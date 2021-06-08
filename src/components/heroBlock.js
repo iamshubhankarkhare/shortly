@@ -20,6 +20,7 @@ function HeroBlock() {
         <H1
           fontWeight="700"
           fontSize={['3rem', '4rem']}
+          color="neutral.veryDarkViolet"
           my={[4, 0]}
           lineHeight="1.25"
           textAlign={['center', 'left']}

@@ -6,6 +6,7 @@ import { Box, Flex, Button } from './components/styledComponents';
 import Navbar from './components/navbar';
 import HeroBlock from './components/heroBlock';
 import CtaBlock from './components/ctaBlock';
+import CardBlock from './components/cardBlock';
 import Footer from './components/footer';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Flex flexDirection="column">
         <Navbar />
         <HeroBlock />
+        <CardBlock />
         <CtaBlock />
         <Footer />
       </Flex>

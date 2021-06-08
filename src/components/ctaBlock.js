@@ -17,7 +17,7 @@ function CtaBlock() {
     >
       <H1
         fontWeight="700"
-        fontSize={['2rem', '4rem']}
+        fontSize={['2rem', '3rem']}
         textAlign="center"
         my={[4, 0]}
         color="white"
