@@ -74,6 +74,19 @@ const Flex = styled.div`
   ${space}
 `;
 
+const Icon = styled.img`
+  ${background}
+  ${layout}
+  ${color}
+  ${space}
+  cursor: pointer;
+  &:hover {
+    color: #2acfcf;
+    filter: brightness(110%);
+    opacity: 0.5;
+  }
+`;
+
 const Button = styled.button`
   cursor: pointer;
   padding: 10px 20px;
@@ -90,4 +103,4 @@ const Button = styled.button`
   }
 `;
 
-export { Box, Flex, Button, Link, H1, H2, FooterLink };
+export { Box, Flex, Button, Link, H1, H2, FooterLink, Icon };
