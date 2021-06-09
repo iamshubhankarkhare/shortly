@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import bgShortenDesktop from '../assests/bg-shorten-desktop.svg';
 import { Flex, P, Button, H2, Input } from './styledComponents';
 import axios from 'axios';
+import LinkBanner from './linkBanner';
 
 function InputBlock() {
   const [value, setValue] = useState('');
   const [infoText, setInfotext] = useState('');
+  const [links, setLinks] = useState([]);
+
   const errText = 'Please add a link';
   const handleOnChange = (e) => {
     setValue(e.target.value);
@@ -17,12 +20,17 @@ function InputBlock() {
     else {
       setInfotext('Relax while we shorten the link for you...');
       const url = `https://api.shrtco.de/v2/shorten?url=${value}`;
+      console.log(url);
       const getData = async () => {
         const res = await axios.get(url);
         const {
-          data: { result },
+          data: {
+            result: { full_short_link, original_link },
+          },
         } = res;
-        console.log(result);
+        console.log(full_short_link, original_link);
+
+        setLinks([...links, { full_short_link, original_link }]);
         setInfotext('');
       };
       getData();
@@ -80,59 +88,13 @@ function InputBlock() {
           Shorten it!
         </Button>
       </Flex>
-      <Flex
-        flexDirection="column"
-        bg="white"
-        mx={[4, '10vw']}
-        borderRadius="10px"
-      >
-        <Flex
-          alignItems="center"
-          justifyContent="space-between"
-          py="15px"
-          flexDirection={['column', 'row']}
-        >
-          <H2
-            color="neutral.veryDarkViolet"
-            mx={[0, 4]}
-            fontSize="24px"
-            textAlign={['center', 'left']}
-          >
-            Link1
-          </H2>
-          <Flex
-            flexDirection={['column', 'row']}
-            alignItems="center"
-            justifyContent="space-between"
-            width={['80%', '50%']}
-            px="4"
-            borderColor="neutral.gray"
-            border={['thin', 'none']}
-            borderStyle={['solid none none none', 'none']}
-          >
-            <H2
-              mx={[0, 4]}
-              fontSize="24px"
-              color="primary.cyan"
-              textAlign={['center', 'left']}
-            >
-              Link1 Link1 Link1 Link1 Link1 Link1 Link1 Link1 Link1 Link1
-            </H2>
-            <Button
-              bg="primary.cyan"
-              color="white"
-              borderRadius="10px"
-              border="none"
-              fontSize="18px"
-              fontWeight="700"
-              py="15px"
-              mx="4"
-              width={['80%', '10vw']}
-            >
-              Copy
-            </Button>
-          </Flex>
-        </Flex>
+      <Flex flexDirection="column" mx={[4, '10vw']} borderRadius="10px">
+        {links.map((link, i) => (
+          <LinkBanner
+            originalLink={link.original_link}
+            fullLink={link.full_short_link}
+          />
+        ))}
       </Flex>
     </Flex>
   );
