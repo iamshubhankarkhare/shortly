@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Flex, Link, Button, H1 } from './styledComponents';
 import bgBoostDesktop from '../assests/bg-boost-desktop.svg';
+import bgBoostMobile from '../assests/bg-boost-mobile.svg';
 
 function CtaBlock() {
   return (
@@ -9,7 +10,7 @@ function CtaBlock() {
       justifyContent="center"
       alignItems="center"
       bg="primary.darkViolet"
-      backgroundImage={`url(${bgBoostDesktop})`}
+      backgroundImage={[`url(${bgBoostMobile})`, `url(${bgBoostDesktop})`]}
       backgroundSize="cover"
       backgroundPosition="center"
       backgroundRepeat="no-repeat"

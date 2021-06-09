@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import bgShortenDesktop from '../assests/bg-shorten-desktop.svg';
+import bgShortenMobile from '../assests/bg-shorten-mobile.svg';
 import { Flex, P, Button, H2, Input } from './styledComponents';
 import axios from 'axios';
 import LinkBanner from './linkBanner';
@@ -15,12 +16,10 @@ function InputBlock() {
   };
 
   const handleClick = () => {
-    console.log(value);
     if (value === '') setInfotext(errText);
     else {
       setInfotext('Relax while we shorten the link for you...');
       const url = `https://api.shrtco.de/v2/shorten?url=${value}`;
-      console.log(url);
       const getData = async () => {
         const res = await axios.get(url);
         const {
@@ -28,7 +27,6 @@ function InputBlock() {
             result: { full_short_link, original_link },
           },
         } = res;
-        console.log(full_short_link, original_link);
 
         setLinks([...links, { full_short_link, original_link }]);
         setInfotext('');
@@ -43,7 +41,10 @@ function InputBlock() {
         justifyContent="space-around"
         alignItems="flex-start"
         bg="primary.darkViolet"
-        backgroundImage={`url(${bgShortenDesktop})`}
+        backgroundImage={[
+          `url(${bgShortenMobile})`,
+          `url(${bgShortenDesktop})`,
+        ]}
         backgroundSize="cover"
         backgroundRepeat="no-repeat"
         mx={[4, '10vw']}
@@ -91,6 +92,7 @@ function InputBlock() {
       <Flex flexDirection="column" mx={[4, '10vw']} borderRadius="10px">
         {links.map((link, i) => (
           <LinkBanner
+            key={i}
             originalLink={link.original_link}
             fullLink={link.full_short_link}
           />

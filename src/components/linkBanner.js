@@ -2,6 +2,16 @@ import React, { useState } from 'react';
 import { Flex, P, Button, H2, Input } from './styledComponents';
 
 function LinkBanner({ originalLink, fullLink }) {
+  const [isCopied, setIscopied] = useState(false);
+
+  const handleClick = () => {
+    navigator.clipboard.writeText(`${fullLink}`);
+    setIscopied(true);
+    setTimeout(() => {
+      setIscopied(false);
+    }, 3000);
+  };
+
   return (
     <Flex
       my="20px"
@@ -42,7 +52,7 @@ function LinkBanner({ originalLink, fullLink }) {
           {fullLink}
         </H2>
         <Button
-          bg="primary.cyan"
+          bg={isCopied ? 'primary.darkViolet' : 'primary.cyan'}
           color="white"
           borderRadius="10px"
           border="none"
@@ -51,8 +61,9 @@ function LinkBanner({ originalLink, fullLink }) {
           py="15px"
           mx="4"
           width={['80%', '10vw']}
+          onClick={() => handleClick()}
         >
-          Copy
+          {isCopied ? 'Copied!' : 'Copy'}
         </Button>
       </Flex>
     </Flex>
