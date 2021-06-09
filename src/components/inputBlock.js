@@ -1,8 +1,26 @@
 import React, { useState } from 'react';
 import bgShortenDesktop from '../assests/bg-shorten-desktop.svg';
 import { Flex, Link, Button, H1, Input } from './styledComponents';
+import axios from 'axios';
 
 function InputBlock() {
+  const [value, setValue] = useState('');
+  const handleOnChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  const handleClick = () => {
+    console.log(value);
+    const url = `https://api.shrtco.de/v2/shorten?url=${value}`;
+    const getData = async () => {
+      const res = await axios.get(url);
+      const {
+        data: { result },
+      } = res;
+      console.log(result);
+    };
+    getData();
+  };
   return (
     <Flex bg="#EFF1F7">
       <Flex
@@ -27,8 +45,9 @@ function InputBlock() {
           py="15px"
           mx="4"
           width="100%"
-          color="secondary.red"
           placeholder="Shorten a link here..."
+          onChange={(e) => handleOnChange(e)}
+          value={value}
         />
 
         <Button
@@ -42,6 +61,7 @@ function InputBlock() {
           mx="4"
           py="15px"
           width={['100%', '20vw']}
+          onClick={() => handleClick()}
         >
           Shorten it!
         </Button>
