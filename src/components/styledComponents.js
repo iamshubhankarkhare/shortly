@@ -48,6 +48,7 @@ const H2 = styled.h2`
   ${typography}
   ${layout}
   ${space}
+  ${border}
 `;
 const P = styled.p`
   font-size: 18px;
@@ -116,7 +117,6 @@ const Button = styled.button`
     color: white;
     background-color: #2acfcf;
     filter: brightness(110%);
-    opacity: 0.5;
   }
 `;
 

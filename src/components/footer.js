@@ -30,7 +30,7 @@ function Footer() {
     <Flex
       bg="neutral.veryDarkViolet"
       px={[4, '10vw']}
-      py="4"
+      py="10vh"
       justifyContent="space-between"
       flexDirection={['column', 'row']}
     >
@@ -108,7 +108,7 @@ function Footer() {
       </Flex>
       <Flex alignItems="flex-start" my="4" justifyContent="space-around">
         {icons.map((el, i) => (
-          <Icon key={i} src={`${el}`} alt="icons" />
+          <Icon key={i} src={`${el}`} alt="icons" mx={[0, '10px']} />
         ))}
       </Flex>
     </Flex>

@@ -13,7 +13,7 @@ function CtaBlock() {
       backgroundSize="cover"
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
-      py="4"
+      py="5vh"
     >
       <H1
         fontWeight="700"
@@ -33,6 +33,7 @@ function CtaBlock() {
         fontSize="24px"
         py="15px"
         mb="4"
+        px="4"
       >
         Get Started
       </Button>

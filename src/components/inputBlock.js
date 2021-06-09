@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import bgShortenDesktop from '../assests/bg-shorten-desktop.svg';
-import { Flex, P, Button, H1, Input } from './styledComponents';
+import { Flex, P, Button, H2, Input } from './styledComponents';
 import axios from 'axios';
 
 function InputBlock() {
@@ -29,7 +29,7 @@ function InputBlock() {
     }
   };
   return (
-    <Flex bg="#EFF1F7">
+    <Flex bg="#EFF1F7" flexDirection="column">
       <Flex
         flexDirection={['column', 'row']}
         justifyContent="space-around"
@@ -40,7 +40,6 @@ function InputBlock() {
         backgroundRepeat="no-repeat"
         mx={[4, '10vw']}
         p="5vh"
-        width="100%"
         borderRadius="10px"
         style={{ transform: 'translateY(-50%)' }}
       >
@@ -80,6 +79,60 @@ function InputBlock() {
         >
           Shorten it!
         </Button>
+      </Flex>
+      <Flex
+        flexDirection="column"
+        bg="white"
+        mx={[4, '10vw']}
+        borderRadius="10px"
+      >
+        <Flex
+          alignItems="center"
+          justifyContent="space-between"
+          py="15px"
+          flexDirection={['column', 'row']}
+        >
+          <H2
+            color="neutral.veryDarkViolet"
+            mx={[0, 4]}
+            fontSize="24px"
+            textAlign={['center', 'left']}
+          >
+            Link1
+          </H2>
+          <Flex
+            flexDirection={['column', 'row']}
+            alignItems="center"
+            justifyContent="space-between"
+            width={['80%', '50%']}
+            px="4"
+            borderColor="neutral.gray"
+            border={['thin', 'none']}
+            borderStyle={['solid none none none', 'none']}
+          >
+            <H2
+              mx={[0, 4]}
+              fontSize="24px"
+              color="primary.cyan"
+              textAlign={['center', 'left']}
+            >
+              Link1 Link1 Link1 Link1 Link1 Link1 Link1 Link1 Link1 Link1
+            </H2>
+            <Button
+              bg="primary.cyan"
+              color="white"
+              borderRadius="10px"
+              border="none"
+              fontSize="18px"
+              fontWeight="700"
+              py="15px"
+              mx="4"
+              width={['80%', '10vw']}
+            >
+              Copy
+            </Button>
+          </Flex>
+        </Flex>
       </Flex>
     </Flex>
   );
